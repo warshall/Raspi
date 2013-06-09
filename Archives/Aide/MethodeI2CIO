@@ -1,0 +1,10 @@
+i2cset -y 1 0x20 0x00 0xC0 //broche 7 et 6 en input et les autre en output
+
+i2cset -y 1 0x20 0x02 0xC0 //GPINTEN definit les interuptions sur broche 7 et 6
+
+i2cset -y 1 0x20 0x04 0xC0 // INTCON a 1 sur broche 7 et 6 compare la valeur par rapport a une valeur par default
+
+i2cset -y 1 0x20 0x03 0xC0 // DEFVAL valeur 1 par default des pins 7 et 6
+
+i2cget -y 1 0x20 0x07 // INTF Donne la valeur du pin activer. Lire 0x09 pour raz INTF
+
