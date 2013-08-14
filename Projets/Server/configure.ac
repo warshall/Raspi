@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AC_CONFIG_SRCDIR([src/main.c])
+AC_CONFIG_SRCDIR([src/server/main.c])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
@@ -20,7 +20,7 @@ PKG_CHECK_MODULES([ELEMENTARY], elementary)
 # Checks for library functions.
 AC_FUNC_MALLOC
 
-AC_OUTPUT(Makefile)
+AC_OUTPUT(Makefile src/Makefile)
 
 
 

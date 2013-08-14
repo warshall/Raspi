@@ -1,5 +1,6 @@
-server-main.o: src/main.c /usr/local/include/elementary-1/Elementary.h \
- /usr/include/stdio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+server-main.o: src/server/main.c \
+ /usr/local/include/elementary-1/Elementary.h /usr/include/stdio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stddef.h \

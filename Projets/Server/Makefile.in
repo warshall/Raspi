@@ -200,7 +200,7 @@ top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = 1.4 foreign
 MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.h.in configure depcomp install-sh missing
 AM_CPPFLAGS = -I$(top_srcdir)
-server_SOURCES = src/main.c
+server_SOURCES = src/server/main.c
 server_LDADD = @ELEMENTARY_LIBS@
 server_CFLAGS = @ELEMENTARY_CFLAGS@
 all: config.h
@@ -323,19 +323,19 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-server-main.o: src/main.c
-@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.o -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.o `test -f 'src/main.c' || echo '$(srcdir)/'`src/main.c
+server-main.o: src/server/main.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.o -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.o `test -f 'src/server/main.c' || echo '$(srcdir)/'`src/server/main.c
 @am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/server-main.Tpo $(DEPDIR)/server-main.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/main.c' object='server-main.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/server/main.c' object='server-main.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.o `test -f 'src/main.c' || echo '$(srcdir)/'`src/main.c
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.o `test -f 'src/server/main.c' || echo '$(srcdir)/'`src/server/main.c
 
-server-main.obj: src/main.c
-@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.obj -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.obj `if test -f 'src/main.c'; then $(CYGPATH_W) 'src/main.c'; else $(CYGPATH_W) '$(srcdir)/src/main.c'; fi`
+server-main.obj: src/server/main.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.obj -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.obj `if test -f 'src/server/main.c'; then $(CYGPATH_W) 'src/server/main.c'; else $(CYGPATH_W) '$(srcdir)/src/server/main.c'; fi`
 @am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/server-main.Tpo $(DEPDIR)/server-main.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/main.c' object='server-main.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/server/main.c' object='server-main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.obj `if test -f 'src/main.c'; then $(CYGPATH_W) 'src/main.c'; else $(CYGPATH_W) '$(srcdir)/src/main.c'; fi`
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.obj `if test -f 'src/server/main.c'; then $(CYGPATH_W) 'src/server/main.c'; else $(CYGPATH_W) '$(srcdir)/src/server/main.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \

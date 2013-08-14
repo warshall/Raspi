@@ -200,7 +200,7 @@ top_srcdir = .
 AUTOMAKE_OPTIONS = 1.4 foreign
 MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.h.in configure depcomp install-sh missing
 AM_CPPFLAGS = -I$(top_srcdir)
-server_SOURCES = src/main.c
+server_SOURCES = src/server/main.c
 server_LDADD = -L/usr/local/lib -lelementary -lm -leina -lpthread -leet -levas -lecore -lecore_evas -lecore_file -lecore_input -ledje -leo -lefreet -lefreet_mime -lefreet_trash -lethumb_client -lecore_imf -lecore_con 
 server_CFLAGS = -pthread -I/usr/local/include/elementary-1 -I/usr/local/include/ethumb-client-1 -I/usr/local/include/ethumb-1 -I/usr/local/include/efreet-1 -I/usr/local/include/eldbus-1 -I/usr/local/include/ecore-x-1 -I/usr/local/include/emotion-1 -I/usr/local/include/eeze-1 -I/usr/local/include/edje-1 -I/usr/local/include/ephysics-1 -I/usr/local/include/eio-1 -I/usr/local/include/embryo-1 -I/usr/local/include/ecore-imf-evas-1 -I/usr/local/include/ecore-imf-1 -I/usr/local/include/ecore-file-1 -I/usr/local/include/ecore-con-1 -I/usr/local/include/ecore-evas-1 -I/usr/local/include/ecore-input-evas-1 -I/usr/local/include/ecore-input-1 -I/usr/local/include/ecore-1 -I/usr/local/include/efl-1 -I/usr/local/include/evas-1 -I/usr/local/include/efl-1 -I/usr/local/include/eo-1 -I/usr/local/include/eet-1 -I/usr/local/include/eina-1 -I/usr/local/include/eina-1/eina -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/uuid -I/usr/include/bullet -I/usr/include/libpng15 -I/usr/include/fribidi -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/freetype2 
 all: config.h
@@ -323,19 +323,19 @@ include ./$(DEPDIR)/server-main.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-server-main.o: src/main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.o -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.o `test -f 'src/main.c' || echo '$(srcdir)/'`src/main.c
+server-main.o: src/server/main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.o -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.o `test -f 'src/server/main.c' || echo '$(srcdir)/'`src/server/main.c
 	$(am__mv) $(DEPDIR)/server-main.Tpo $(DEPDIR)/server-main.Po
-#	source='src/main.c' object='server-main.o' libtool=no \
+#	source='src/server/main.c' object='server-main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.o `test -f 'src/main.c' || echo '$(srcdir)/'`src/main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.o `test -f 'src/server/main.c' || echo '$(srcdir)/'`src/server/main.c
 
-server-main.obj: src/main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.obj -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.obj `if test -f 'src/main.c'; then $(CYGPATH_W) 'src/main.c'; else $(CYGPATH_W) '$(srcdir)/src/main.c'; fi`
+server-main.obj: src/server/main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.obj -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.obj `if test -f 'src/server/main.c'; then $(CYGPATH_W) 'src/server/main.c'; else $(CYGPATH_W) '$(srcdir)/src/server/main.c'; fi`
 	$(am__mv) $(DEPDIR)/server-main.Tpo $(DEPDIR)/server-main.Po
-#	source='src/main.c' object='server-main.obj' libtool=no \
+#	source='src/server/main.c' object='server-main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.obj `if test -f 'src/main.c'; then $(CYGPATH_W) 'src/main.c'; else $(CYGPATH_W) '$(srcdir)/src/main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -c -o server-main.obj `if test -f 'src/server/main.c'; then $(CYGPATH_W) 'src/server/main.c'; else $(CYGPATH_W) '$(srcdir)/src/server/main.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
