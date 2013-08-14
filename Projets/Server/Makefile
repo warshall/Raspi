@@ -48,7 +48,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = server$(EXEEXT)
+bin_PROGRAMS = server$(EXEEXT) client$(EXEEXT)
 subdir = .
 DIST_COMMON = $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
@@ -65,6 +65,11 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
+am_client_OBJECTS = client-main.$(OBJEXT)
+client_OBJECTS = $(am_client_OBJECTS)
+client_DEPENDENCIES =
+client_LINK = $(CCLD) $(client_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
 am_server_OBJECTS = server-main.$(OBJEXT)
 server_OBJECTS = $(am_server_OBJECTS)
 server_DEPENDENCIES =
@@ -78,8 +83,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(server_SOURCES)
-DIST_SOURCES = $(server_SOURCES)
+SOURCES = $(client_SOURCES) $(server_SOURCES)
+DIST_SOURCES = $(client_SOURCES) $(server_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -203,6 +208,9 @@ AM_CPPFLAGS = -I$(top_srcdir)
 server_SOURCES = src/server/main.c
 server_LDADD = -L/usr/local/lib -lelementary -lm -leina -lpthread -leet -levas -lecore -lecore_evas -lecore_file -lecore_input -ledje -leo -lefreet -lefreet_mime -lefreet_trash -lethumb_client -lecore_imf -lecore_con 
 server_CFLAGS = -pthread -I/usr/local/include/elementary-1 -I/usr/local/include/ethumb-client-1 -I/usr/local/include/ethumb-1 -I/usr/local/include/efreet-1 -I/usr/local/include/eldbus-1 -I/usr/local/include/ecore-x-1 -I/usr/local/include/emotion-1 -I/usr/local/include/eeze-1 -I/usr/local/include/edje-1 -I/usr/local/include/ephysics-1 -I/usr/local/include/eio-1 -I/usr/local/include/embryo-1 -I/usr/local/include/ecore-imf-evas-1 -I/usr/local/include/ecore-imf-1 -I/usr/local/include/ecore-file-1 -I/usr/local/include/ecore-con-1 -I/usr/local/include/ecore-evas-1 -I/usr/local/include/ecore-input-evas-1 -I/usr/local/include/ecore-input-1 -I/usr/local/include/ecore-1 -I/usr/local/include/efl-1 -I/usr/local/include/evas-1 -I/usr/local/include/efl-1 -I/usr/local/include/eo-1 -I/usr/local/include/eet-1 -I/usr/local/include/eina-1 -I/usr/local/include/eina-1/eina -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/uuid -I/usr/include/bullet -I/usr/include/libpng15 -I/usr/include/fribidi -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/freetype2 
+client_SOURCES = src/client/main.c src/client/main.h
+client_LDADD = -L/usr/local/lib -lelementary -lm -leina -lpthread -leet -levas -lecore -lecore_evas -lecore_file -lecore_input -ledje -leo -lefreet -lefreet_mime -lefreet_trash -lethumb_client -lecore_imf -lecore_con 
+client_CFLAGS = -pthread -I/usr/local/include/elementary-1 -I/usr/local/include/ethumb-client-1 -I/usr/local/include/ethumb-1 -I/usr/local/include/efreet-1 -I/usr/local/include/eldbus-1 -I/usr/local/include/ecore-x-1 -I/usr/local/include/emotion-1 -I/usr/local/include/eeze-1 -I/usr/local/include/edje-1 -I/usr/local/include/ephysics-1 -I/usr/local/include/eio-1 -I/usr/local/include/embryo-1 -I/usr/local/include/ecore-imf-evas-1 -I/usr/local/include/ecore-imf-1 -I/usr/local/include/ecore-file-1 -I/usr/local/include/ecore-con-1 -I/usr/local/include/ecore-evas-1 -I/usr/local/include/ecore-input-evas-1 -I/usr/local/include/ecore-input-1 -I/usr/local/include/ecore-1 -I/usr/local/include/efl-1 -I/usr/local/include/evas-1 -I/usr/local/include/efl-1 -I/usr/local/include/eo-1 -I/usr/local/include/eet-1 -I/usr/local/include/eina-1 -I/usr/local/include/eina-1/eina -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/uuid -I/usr/include/bullet -I/usr/include/libpng15 -I/usr/include/fribidi -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/freetype2 
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -297,6 +305,9 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+client$(EXEEXT): $(client_OBJECTS) $(client_DEPENDENCIES) $(EXTRA_client_DEPENDENCIES) 
+	@rm -f client$(EXEEXT)
+	$(client_LINK) $(client_OBJECTS) $(client_LDADD) $(LIBS)
 server$(EXEEXT): $(server_OBJECTS) $(server_DEPENDENCIES) $(EXTRA_server_DEPENDENCIES) 
 	@rm -f server$(EXEEXT)
 	$(server_LINK) $(server_OBJECTS) $(server_LDADD) $(LIBS)
@@ -307,6 +318,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/client-main.Po
 include ./$(DEPDIR)/server-main.Po
 
 .c.o:
@@ -322,6 +334,20 @@ include ./$(DEPDIR)/server-main.Po
 #	source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+
+client-main.o: src/client/main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(client_CFLAGS) $(CFLAGS) -MT client-main.o -MD -MP -MF $(DEPDIR)/client-main.Tpo -c -o client-main.o `test -f 'src/client/main.c' || echo '$(srcdir)/'`src/client/main.c
+	$(am__mv) $(DEPDIR)/client-main.Tpo $(DEPDIR)/client-main.Po
+#	source='src/client/main.c' object='client-main.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(client_CFLAGS) $(CFLAGS) -c -o client-main.o `test -f 'src/client/main.c' || echo '$(srcdir)/'`src/client/main.c
+
+client-main.obj: src/client/main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(client_CFLAGS) $(CFLAGS) -MT client-main.obj -MD -MP -MF $(DEPDIR)/client-main.Tpo -c -o client-main.obj `if test -f 'src/client/main.c'; then $(CYGPATH_W) 'src/client/main.c'; else $(CYGPATH_W) '$(srcdir)/src/client/main.c'; fi`
+	$(am__mv) $(DEPDIR)/client-main.Tpo $(DEPDIR)/client-main.Po
+#	source='src/client/main.c' object='client-main.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(client_CFLAGS) $(CFLAGS) -c -o client-main.obj `if test -f 'src/client/main.c'; then $(CYGPATH_W) 'src/client/main.c'; else $(CYGPATH_W) '$(srcdir)/src/client/main.c'; fi`
 
 server-main.o: src/server/main.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(server_CFLAGS) $(CFLAGS) -MT server-main.o -MD -MP -MF $(DEPDIR)/server-main.Tpo -c -o server-main.o `test -f 'src/server/main.c' || echo '$(srcdir)/'`src/server/main.c
