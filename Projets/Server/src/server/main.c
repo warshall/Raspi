@@ -4,6 +4,9 @@
 Eina_Bool
 _add(void *data , int type, Ecore_Con_Event_Client_Add *ev)
 {
+
+printf("New client !\n") ;
+
   /* char welcome[] = "hello! - sent from the server";
    Ecore_Con_Server *srv;
    Ecore_Con_Client *cl;
@@ -33,33 +36,41 @@ _add(void *data , int type, Ecore_Con_Event_Client_Add *ev)
    return ECORE_CALLBACK_RENEW;*/
 }
 
+Eina_Bool
+_del(void *data , int type, Ecore_Con_Event_Client_Add *ev)
+{
+
+printf("Client disconected !\n") ;
+
+
+}
 
 
 void main(void)
 {
-    // Our server
+// Our server
     Ecore_Con_Server *svr ;
 
-    // Init Ecore
+// Init Ecore
     ecore_init();
     ecore_con_init();
 
-    // Start Server
+// Start Server
     if (!(svr = ecore_con_server_add(ECORE_CON_REMOTE_TCP, "127.0.0.1", 1234, NULL)))
             exit(1);
 
-    // Set timeout and client limit
+// Set timeout and client limit
     ecore_con_server_timeout_set(svr, 10);
     ecore_con_server_client_limit_set(svr, 3, 0);
 
     printf("Server done !\n") ;
 
-    // What it doing when new client, client quit, or data received
+// What it doing when new client, client quit, or data received
     ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_ADD, (Ecore_Event_Handler_Cb)_add, NULL);
-//    ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_DEL, (Ecore_Event_Handler_Cb)_del, NULL);
+    ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_DEL, (Ecore_Event_Handler_Cb)_del, NULL);
 //    ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_DATA, (Ecore_Event_Handler_Cb)_data, NULL);
 
-    // Start ecore loop
+// Start ecore loop
     ecore_main_loop_begin();
 
 
