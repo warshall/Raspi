@@ -1,6 +1,7 @@
 #include <Elementary.h>
 #include <stdio.h>
 #include "main.h"
+//#include <pthread.h>
 
 
 // Button connect pressed

@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_INIT([Raspi-ServClient], [1.0], [sat7070@gmail.com])
 AC_CONFIG_SRCDIR([src/server/main.c])
 AC_CONFIG_HEADERS([config.h])
 
@@ -10,6 +10,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC
 AM_INIT_AUTOMAKE(1.6 dist-bzip2)
 PKG_CHECK_MODULES([ELEMENTARY], elementary)
+PKG_CHECK_MODULES([PTHREAD], pthread-stubs)
 
 # Checks for libraries.
 
@@ -20,7 +21,7 @@ PKG_CHECK_MODULES([ELEMENTARY], elementary)
 # Checks for library functions.
 AC_FUNC_MALLOC
 
-AC_OUTPUT(Makefile src/Makefile)
+AC_OUTPUT(Makefile src/Makefile src/client/Makefile src/server/Makefile)
 
 
 
