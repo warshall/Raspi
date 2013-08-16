@@ -46,6 +46,21 @@ printf("Client disconected !\n") ;
 }
 
 
+Eina_Bool
+_data(void *data, int type, Ecore_Con_Event_Server_Data *ev)
+{
+   char fmt[128];
+
+
+ snprintf(fmt, sizeof(fmt), "Received %i bytes from server:\n" ">>>>>\n"  "%s\n" ">>>>>\n", ev->size, ev->data);
+
+   printf(fmt);
+
+
+  return ECORE_CALLBACK_RENEW;
+}
+
+
 void main(void)
 {
 // Our server
@@ -68,7 +83,7 @@ void main(void)
 // What it doing when new client, client quit, or data received
     ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_ADD, (Ecore_Event_Handler_Cb)_add, NULL);
     ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_DEL, (Ecore_Event_Handler_Cb)_del, NULL);
-//    ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_DATA, (Ecore_Event_Handler_Cb)_data, NULL);
+    ecore_event_handler_add(ECORE_CON_EVENT_CLIENT_DATA, (Ecore_Event_Handler_Cb)_data, NULL);
 
 // Start ecore loop
     ecore_main_loop_begin();
