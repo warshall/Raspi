@@ -1,5 +1,5 @@
 #include<Elementary.h>
-
+//Partie server
 
 Eina_Bool
 _add(void *data , int type, Ecore_Con_Event_Client_Add *ev)
