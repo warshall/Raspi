@@ -4,7 +4,7 @@
 Eina_Bool
 _add(void *data , int type, Ecore_Con_Event_Client_Add *ev)
 {
-
+//teste
 printf("New client !\n") ;
 
   /* char welcome[] = "hello! - sent from the server";
