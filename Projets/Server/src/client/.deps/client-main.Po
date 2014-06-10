@@ -1,11 +1,11 @@
 client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/include/stdio.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stddef.h \
+ /usr/include/gnu/stubs-32.h \
+ /usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/stddef.h \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stdarg.h \
+ /usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
@@ -23,8 +23,8 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/include/bits/string3.h /usr/include/sys/stat.h \
  /usr/include/bits/stat.h /usr/include/sys/time.h \
  /usr/include/sys/param.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include-fixed/syslimits.h \
+ /usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include-fixed/limits.h \
+ /usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/linux/param.h \
@@ -41,10 +41,15 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/include/locale.h /usr/include/bits/locale.h /usr/include/libintl.h \
  /usr/include/signal.h /usr/include/bits/signum.h \
  /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
- /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
+ /usr/include/bits/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/linux/types.h /usr/include/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_32.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/bits/sigstack.h \
  /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h \
- /usr/include/grp.h /usr/include/glob.h \
- /usr/local/include/efl-1/Efl_Config.h /usr/local/include/eina-1/Eina.h \
+ /usr/include/grp.h /usr/include/glob.h /usr/local/include/eina-1/Eina.h \
  /usr/local/include/eina-1/eina_config.h \
  /usr/local/include/eina-1/eina/eina_types.h \
  /usr/local/include/eina-1/eina_config.h \
@@ -52,7 +57,7 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/local/include/eina-1/eina/eina_main.h \
  /usr/local/include/eina-1/eina/eina_types.h \
  /usr/local/include/eina-1/eina/eina_fp.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stdint.h \
+ /usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/local/include/eina-1/eina/eina_inline_f32p32.x \
  /usr/local/include/eina-1/eina/eina_inline_f16p16.x \
@@ -107,6 +112,7 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/local/include/eina-1/eina/eina_convert.h \
  /usr/local/include/eina-1/eina/eina_fp.h \
  /usr/local/include/eina-1/eina/eina_cpu.h \
+ /usr/local/include/eina-1/eina/eina_inline_cpu.x /usr/include/byteswap.h \
  /usr/local/include/eina-1/eina/eina_sched.h \
  /usr/local/include/eina-1/eina/eina_tiler.h \
  /usr/local/include/eina-1/eina/eina_rectangle.h \
@@ -127,7 +133,7 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/local/include/eina-1/eina/eina_simple_xml_parser.h \
  /usr/local/include/eina-1/eina/eina_lock.h \
  /usr/local/include/eina-1/eina/eina_inline_lock_posix.x \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/sched.h /usr/include/bits/sched.h /usr/include/pthread.h \
  /usr/include/bits/setjmp.h /usr/include/semaphore.h \
  /usr/include/bits/semaphore.h \
  /usr/local/include/eina-1/eina/eina_prefix.h \
@@ -161,7 +167,8 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/include/bits/socket2.h /usr/include/bits/in.h \
  /usr/include/rpc/netdb.h /usr/include/bits/netdb.h \
  /usr/local/include/edje-1/Edje.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/float.h \
+ /usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/float.h \
+ /usr/local/include/efl-1/Efl_Config.h \
  /usr/local/include/edje-1/Edje_Common.h \
  /usr/local/include/edje-1/Edje_Legacy.h \
  /usr/local/include/eldbus-1/Eldbus.h \
@@ -201,6 +208,9 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/local/include/elementary-1/elm_systray_common.h \
  /usr/local/include/elementary-1/elm_sys_notify.h \
  /usr/local/include/elementary-1/elm_access.h \
+ /usr/local/include/elementary-1/elm_atspi_object.h \
+ /usr/local/include/elementary-1/elm_atspi_object_common.h \
+ /usr/local/include/elementary-1/elm_atspi_object_legacy.h \
  /usr/local/include/elementary-1/elm_icon.h \
  /usr/local/include/elementary-1/elm_icon_common.h \
  /usr/local/include/elementary-1/elm_icon_legacy.h \
@@ -240,6 +250,11 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
  /usr/local/include/elementary-1/elm_actionslider.h \
  /usr/local/include/elementary-1/elm_actionslider_common.h \
  /usr/local/include/elementary-1/elm_actionslider_legacy.h \
+ /usr/local/include/elementary-1/elm_app_common.h \
+ /usr/local/include/elementary-1/elm_app_server.h \
+ /usr/local/include/elementary-1/elm_app_server_view.h \
+ /usr/local/include/elementary-1/elm_app_client.h \
+ /usr/local/include/elementary-1/elm_app_client_view.h \
  /usr/local/include/elementary-1/elm_app.h \
  /usr/local/include/elementary-1/elm_bg.h \
  /usr/local/include/elementary-1/elm_bg_common.h \
@@ -398,9 +413,9 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/include/gnu/stubs.h:
 
-/usr/include/gnu/stubs-64.h:
+/usr/include/gnu/stubs-32.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stddef.h:
+/usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/stddef.h:
 
 /usr/include/bits/types.h:
 
@@ -412,7 +427,7 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/include/wchar.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stdarg.h:
+/usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/stdarg.h:
 
 /usr/include/bits/stdio_lim.h:
 
@@ -486,9 +501,9 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/include/sys/param.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include-fixed/limits.h:
+/usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include-fixed/limits.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include-fixed/syslimits.h:
+/usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -562,6 +577,30 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/include/bits/sigcontext.h:
 
+/usr/include/asm/sigcontext.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/asm/types.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/asm/bitsperlong.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/asm/posix_types.h:
+
+/usr/include/asm/posix_types_32.h:
+
+/usr/include/asm-generic/posix_types.h:
+
 /usr/include/bits/sigstack.h:
 
 /usr/include/sys/ucontext.h:
@@ -571,8 +610,6 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 /usr/include/grp.h:
 
 /usr/include/glob.h:
-
-/usr/local/include/efl-1/Efl_Config.h:
 
 /usr/local/include/eina-1/Eina.h:
 
@@ -590,7 +627,7 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/local/include/eina-1/eina/eina_fp.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/stdint.h:
+/usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/stdint.h:
 
 /usr/include/stdint.h:
 
@@ -704,6 +741,10 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/local/include/eina-1/eina/eina_cpu.h:
 
+/usr/local/include/eina-1/eina/eina_inline_cpu.x:
+
+/usr/include/byteswap.h:
+
 /usr/local/include/eina-1/eina/eina_sched.h:
 
 /usr/local/include/eina-1/eina/eina_tiler.h:
@@ -744,11 +785,11 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/local/include/eina-1/eina/eina_inline_lock_posix.x:
 
-/usr/include/pthread.h:
-
 /usr/include/sched.h:
 
 /usr/include/bits/sched.h:
+
+/usr/include/pthread.h:
 
 /usr/include/bits/setjmp.h:
 
@@ -844,7 +885,9 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/local/include/edje-1/Edje.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.3/include/float.h:
+/usr/lib/gcc/i686-pc-linux-gnu/4.6.3/include/float.h:
+
+/usr/local/include/efl-1/Efl_Config.h:
 
 /usr/local/include/edje-1/Edje_Common.h:
 
@@ -924,6 +967,12 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 
 /usr/local/include/elementary-1/elm_access.h:
 
+/usr/local/include/elementary-1/elm_atspi_object.h:
+
+/usr/local/include/elementary-1/elm_atspi_object_common.h:
+
+/usr/local/include/elementary-1/elm_atspi_object_legacy.h:
+
 /usr/local/include/elementary-1/elm_icon.h:
 
 /usr/local/include/elementary-1/elm_icon_common.h:
@@ -1001,6 +1050,16 @@ client-main.o: main.c /usr/local/include/elementary-1/Elementary.h \
 /usr/local/include/elementary-1/elm_actionslider_common.h:
 
 /usr/local/include/elementary-1/elm_actionslider_legacy.h:
+
+/usr/local/include/elementary-1/elm_app_common.h:
+
+/usr/local/include/elementary-1/elm_app_server.h:
+
+/usr/local/include/elementary-1/elm_app_server_view.h:
+
+/usr/local/include/elementary-1/elm_app_client.h:
+
+/usr/local/include/elementary-1/elm_app_client_view.h:
 
 /usr/local/include/elementary-1/elm_app.h:
 

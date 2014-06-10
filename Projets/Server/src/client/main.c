@@ -182,8 +182,8 @@ Build_Window ()
 //Create Entrys
     printf("Create entry\n") ;
     Main_Win->ip = elm_entry_add(Main_Win->win) ;
-    evas_object_move(Main_Win->ip, 120, 12) ;
-    evas_object_resize(Main_Win->ip, 60, 20) ;
+    evas_object_move(Main_Win->ip, 120, 120) ;
+    evas_object_resize(Main_Win->ip, 100, 30) ;
     elm_object_text_set (Main_Win->ip, "127.0.0.1") ;
     elm_entry_scrollable_set(Main_Win->ip, EINA_TRUE) ;
     elm_object_tooltip_text_set(Main_Win->ip, "Coucou") ;

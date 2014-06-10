@@ -437,7 +437,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/satanik/essais/Raspi/Projets/Server'
+ac_pwd='/home/satanik/programmations/git/Raspi/Projets/Server'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -626,16 +626,21 @@ S["GREP"]="/bin/grep"
 S["CPP"]="gcc -E"
 S["PTHREAD_LIBS"]=""
 S["PTHREAD_CFLAGS"]=""
-S["ELEMENTARY_LIBS"]="-L/usr/local/lib -lelementary -lm -leina -lpthread -leet -levas -lecore -lecore_evas -lecore_file -lecore_input -ledje -leo -lefreet -lefreet_mime -"\
-"lefreet_trash -lethumb_client -lecore_imf -lecore_con "
-S["ELEMENTARY_CFLAGS"]="-pthread -I/usr/local/include/elementary-1 -I/usr/local/include/ethumb-client-1 -I/usr/local/include/ethumb-1 -I/usr/local/include/efreet-1 -I/usr/l"\
-"ocal/include/eldbus-1 -I/usr/local/include/ecore-x-1 -I/usr/local/include/emotion-1 -I/usr/local/include/eeze-1 -I/usr/local/include/edje-1 -I/usr/l"\
-"ocal/include/ephysics-1 -I/usr/local/include/eio-1 -I/usr/local/include/embryo-1 -I/usr/local/include/ecore-imf-evas-1 -I/usr/local/include/ecore-im"\
-"f-1 -I/usr/local/include/ecore-file-1 -I/usr/local/include/ecore-con-1 -I/usr/local/include/ecore-evas-1 -I/usr/local/include/ecore-input-evas-1 -I/"\
-"usr/local/include/ecore-input-1 -I/usr/local/include/ecore-1 -I/usr/local/include/efl-1 -I/usr/local/include/evas-1 -I/usr/local/include/efl-1 -I/us"\
-"r/local/include/eo-1 -I/usr/local/include/eet-1 -I/usr/local/include/eina-1 -I/usr/local/include/eina-1/eina -I/usr/include/dbus-1.0 -I/usr/lib64/db"\
-"us-1.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/uuid -I/usr/include/bullet -I/usr/include/libpng15 -I/usr/include/fribidi"\
-" -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/freetype2 "
+S["ELEMENTARY_LIBS"]="-L/usr/local/lib -lelementary -lm -leina -lpthread -leet -levas -lecore -lecore_evas -lecore_file -lecore_input -ledje -leo -lethumb_client -lemotio"\
+"n -lecore_imf -lecore_con -leio -leldbus -lefreet -lefreet_mime -lefreet_trash "
+S["ELEMENTARY_CFLAGS"]="-pthread -I/usr/local/include/elementary-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore-x-1 -I/usr/local/include/efl-1 -I/usr/local/include"\
+"/ethumb-client-1 -I/usr/local/include/efl-1 -I/usr/local/include/ethumb-1 -I/usr/local/include/efl-1 -I/usr/local/include/edje-1 -I/usr/local/includ"\
+"e/efl-1 -I/usr/local/include/ephysics-1 -I/usr/local/include/efl-1 -I/usr/local/include/embryo-1 -I/usr/local/include/efl-1 -I/usr/local/include/eco"\
+"re-imf-evas-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore-evas-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore-input-evas-1 -I/usr"\
+"/local/include/efl-1 -I/usr/local/include/emotion-1 -I/usr/local/include/efl-1 -I/usr/local/include/eeze-1 -I/usr/local/include/efl-1 -I/usr/local/i"\
+"nclude/evas-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore-imf-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore-input-1 -I/usr/local"\
+"/include/efl-1 -I/usr/local/include/eio-1 -I/usr/local/include/efl-1 -I/usr/local/include/efreet-1 -I/usr/local/include/efl-1 -I/usr/local/include/e"\
+"freet-1 -I/usr/local/include/efl-1 -I/usr/local/include/efreet-1 -I/usr/local/include/efl-1 -I/usr/local/include/eldbus-1 -I/usr/local/include/efl-1"\
+" -I/usr/local/include/ecore-file-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore-con-1 -I/usr/local/include/efl-1 -I/usr/local/include/ecore"\
+"-1 -I/usr/local/include/efl-1 -I/usr/local/include/eo-1 -I/usr/local/include/efl-1 -I/usr/local/include/eet-1 -I/usr/local/include/efl-1 -I/usr/loca"\
+"l/include/eina-1 -I/usr/local/include/eina-1/eina -I/usr/include/luajit-2.0 -I/usr/include/bullet -I/usr/include/libmount -I/usr/include/blkid -I/us"\
+"r/include/uuid -I/usr/include/libpng15 -I/usr/include/fribidi -I/usr/include/freetype2 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/in"\
+"clude/glib-2.0 -I/usr/lib/glib-2.0/include "
 S["PKG_CONFIG_LIBDIR"]=""
 S["PKG_CONFIG_PATH"]="/usr/local/lib/pkgconfig/:/usr/lib64/pkgconfig/:/usr/local/lib64/pkgconfig/"
 S["PKG_CONFIG"]="/usr/bin/pkg-config"
@@ -659,12 +664,12 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]=""
-S["install_sh"]="${SHELL} /home/satanik/essais/Raspi/Projets/Server/install-sh"
-S["MAKEINFO"]="${SHELL} /home/satanik/essais/Raspi/Projets/Server/missing --run makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/satanik/essais/Raspi/Projets/Server/missing --run autoheader"
-S["AUTOMAKE"]="${SHELL} /home/satanik/essais/Raspi/Projets/Server/missing --run automake-1.12"
-S["AUTOCONF"]="${SHELL} /home/satanik/essais/Raspi/Projets/Server/missing --run autoconf"
-S["ACLOCAL"]="${SHELL} /home/satanik/essais/Raspi/Projets/Server/missing --run aclocal-1.12"
+S["install_sh"]="${SHELL} /home/satanik/programmations/git/Raspi/Projets/Server/install-sh"
+S["MAKEINFO"]="${SHELL} /home/satanik/programmations/git/Raspi/Projets/Server/missing --run makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/satanik/programmations/git/Raspi/Projets/Server/missing --run autoheader"
+S["AUTOMAKE"]="${SHELL} /home/satanik/programmations/git/Raspi/Projets/Server/missing --run automake-1.12"
+S["AUTOCONF"]="${SHELL} /home/satanik/programmations/git/Raspi/Projets/Server/missing --run autoconf"
+S["ACLOCAL"]="${SHELL} /home/satanik/programmations/git/Raspi/Projets/Server/missing --run aclocal-1.12"
 S["VERSION"]="1.0"
 S["PACKAGE"]="raspi-servclient"
 S["CYGPATH_W"]="echo"
